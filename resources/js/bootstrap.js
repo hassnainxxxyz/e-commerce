@@ -27,7 +27,7 @@ window.Vuex = Vuex;
 
 
 
-window.APIURL = "http://fresh.com";
+window.APIURL = "http://e-commerce.com";
 
 
 

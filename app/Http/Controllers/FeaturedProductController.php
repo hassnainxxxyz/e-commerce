@@ -18,6 +18,7 @@ class FeaturedProductController extends Controller
      */
     public function fetch($limit)
     {
+        
 
 
         return new FeaturedProductCollection(Category::where('name', 'Featured Products')->first()->products()->limit($limit)->get());
