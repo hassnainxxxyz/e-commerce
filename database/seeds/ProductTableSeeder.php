@@ -12,6 +12,34 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
+
+//        FEATURED PRODUCTS FACTORY
+
+        $limit = 50;
+        factory('App\Product', $limit)->create();
+
+
+        foreach(Product::all() as $p) {
+            $img = new ProductImage();
+            $img->main = 'main.jpg';
+            $img->one = '1st.jpg';
+            $img->two = '2nd.jpg';
+            $img->three = '3rd.jpg';
+            $p->images()->save($img);
+
+
+
+            $p->categories()->attach(1);
+        }
+
+
+
+//        END FEATURED PRODUCTS FACTORY
+
+
+
+
+
         $one = Product::create(['name' => 'HP Computer', 'description' => 'This is the hp computer',
             'slug' => 'hp-computer',
             'price' => rand(1000, 10000),

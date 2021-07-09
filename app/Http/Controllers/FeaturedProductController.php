@@ -11,6 +11,11 @@ use App\Http\Resources\FeaturedProduct;
 
 class FeaturedProductController extends Controller
 {
+    public function index()
+    {
+        return 123;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +23,7 @@ class FeaturedProductController extends Controller
      */
     public function fetch($limit)
     {
-        
+
 
 
         return new FeaturedProductCollection(Category::where('name', 'Featured Products')->first()->products()->limit($limit)->get());
