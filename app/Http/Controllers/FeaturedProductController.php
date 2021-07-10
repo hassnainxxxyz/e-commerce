@@ -13,7 +13,9 @@ class FeaturedProductController extends Controller
 {
     public function index()
     {
-        return 123;
+        $obj = Category::first()->products;
+
+        return new FeaturedProductCollection($obj);
     }
 
     /**
