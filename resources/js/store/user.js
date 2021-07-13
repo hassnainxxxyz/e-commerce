@@ -1,7 +1,7 @@
 
 const state = {
      user: null,
-    token: null,
+
 
 };
 
@@ -9,9 +9,7 @@ const getters = {
      getUser(state) {
          return state.user;
      },
-    getToken(state) {
-      return state.token;
-    },
+
 
 };
 
@@ -19,13 +17,8 @@ const mutations = {
     insertUser(state, user) {
       state.user = user;
     },
-    insertToken(state, token) {
-      state.token = token;
-    },
 
-    destoryToken(state) {
-      state.token = null;
-    },
+
 
     destoryUser(state) {
       state.user = null;
@@ -35,9 +28,7 @@ const mutations = {
 };
 
 const actions = {
-         setToken(context, token) {
-             context.commit('insertToken', token);
-         },
+
 
          deleteTokenAndUser(context) {
 
@@ -56,8 +47,6 @@ const actions = {
 
 
 
-             localStorage.removeItem('token');
-             context.commit('destoryToken');
              context.commit('destoryUser');
 
          },

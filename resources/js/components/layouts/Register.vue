@@ -152,7 +152,6 @@
 
 
                             this.$store.dispatch('setUser', data.user);
-                            this.$store.dispatch('setToken', data.token);
                             localStorage.setItem('token', data.token);
                            this.user = this.$store.getters.getUser;
 

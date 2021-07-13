@@ -8,7 +8,6 @@
 <script>
     export default {
         beforeCreate() {
-          this.$store.dispatch('deleteTokenAndUser');
           sessionStorage.removeItem('redirectURL');
           this.$router.push({name: 'home'});
         },

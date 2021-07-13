@@ -916,7 +916,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeCreate: function beforeCreate() {
-    this.$store.dispatch('deleteTokenAndUser');
     sessionStorage.removeItem('redirectURL');
     this.$router.push({
       name: 'home'
@@ -1082,8 +1081,6 @@ __webpack_require__.r(__webpack_exports__);
           var data = res.data.data;
 
           _this.$store.dispatch('setUser', data.user);
-
-          _this.$store.dispatch('setToken', data.token);
 
           localStorage.setItem('token', data.token);
           _this.user = _this.$store.getters.getUser;
@@ -8532,35 +8529,22 @@ Vue.use(Vuex);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var state = {
-  user: null,
-  token: null
+  user: null
 };
 var getters = {
   getUser: function getUser(state) {
     return state.user;
-  },
-  getToken: function getToken(state) {
-    return state.token;
   }
 };
 var mutations = {
   insertUser: function insertUser(state, user) {
     state.user = user;
   },
-  insertToken: function insertToken(state, token) {
-    state.token = token;
-  },
-  destoryToken: function destoryToken(state) {
-    state.token = null;
-  },
   destoryUser: function destoryUser(state) {
     state.user = null;
   }
 };
 var actions = {
-  setToken: function setToken(context, token) {
-    context.commit('insertToken', token);
-  },
   deleteTokenAndUser: function deleteTokenAndUser(context) {
     //
     // axios({
@@ -8574,8 +8558,6 @@ var actions = {
     //     .catch(error => {
     //         console.log(error);
     //     });
-    localStorage.removeItem('token');
-    context.commit('destoryToken');
     context.commit('destoryUser');
   },
   setUser: function setUser(context, user) {
