@@ -15,7 +15,7 @@
                             <div class="row h-100">
                                 <div class="col-12 p-0 mb-3">
                                     <router-link :to="'/products/'+product.slug" class="product-name">
-                                    <img :src="'/images/'+product.images.main" class="img-fluid">
+                                        <img :src="'/images/'+product.images.main" class="img-fluid">
                                     </router-link>
                                 </div>
                                 <div class="col-12 mb-3">
@@ -57,26 +57,26 @@
             }
         },
         mounted() {
-          axios({
-              method: 'get',
-              url: APIURL+`/api/featured-products/get/${this.limit}`,
-          })
-              .then(res => {
-                  if(res.data.data) {
-                      this.products = res.data.data;
+            axios({
+                method: 'get',
+                url: APIURL+`/api/featured-products/get/${this.limit}`,
+            })
+                .then(res => {
+                    if(res.data.data) {
+                        this.products = res.data.data;
 
 
-                  }
+                    }
 
-              })
-              .catch(err => {
-                  console.log(err);
-              });
+                })
+                .catch(err => {
+                    console.log(err);
+                });
         },
         methods: {
-          viewProduct(p) {
+            viewProduct(p) {
 
-          }
+            }
         },
     }
 

@@ -13,7 +13,8 @@ class FeaturedProductController extends Controller
 {
     public function index()
     {
-        $obj = Category::first()->products;
+
+        $obj = Category::first()->products()->paginate(12);
 
         return new FeaturedProductCollection($obj);
     }
@@ -25,7 +26,6 @@ class FeaturedProductController extends Controller
      */
     public function fetch($limit)
     {
-
 
 
         return new FeaturedProductCollection(Category::where('name', 'Featured Products')->first()->products()->limit($limit)->get());

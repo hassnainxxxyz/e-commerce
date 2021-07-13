@@ -30,6 +30,7 @@ window.Vuex = Vuex;
 window.APIURL = "http://e-commerce.com";
 
 
+Vue.component('pagination', require('laravel-vue-pagination'));
 
 
 

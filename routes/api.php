@@ -19,7 +19,7 @@ $dictionaries =
       intense supplicate  sorority a social club for female undergraduate
        FRAT a social club for male undergraduate
        Associating  exaggerate   exaggerate exaggerate  abundance  competencies 
-       obfuscate indifferent  ";
+       obfuscate indifferent  vulnerabilities    ";
 
 
 //Route::middleware('auth:api')->post('/user', function (Request $request) {

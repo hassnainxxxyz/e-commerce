@@ -139,7 +139,7 @@
             apiCall() {
                axios({
                  method: 'post',
-                 url: 'http://fresh.com/api/register',
+                 url: APIURL+'/api/register',
                  data: this.form,
                })
                    .then(res => {
