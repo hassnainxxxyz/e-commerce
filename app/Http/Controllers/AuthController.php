@@ -66,6 +66,60 @@ class AuthController extends Controller
 //        return response()->json(['data' => ['user' => $user, 'token' => $token]]);
     }
 
+    public function login()
+    {
+
+        $email = request()->email;
+        $password = request()->password;
+
+        $errors = [];
+//           FORM VALIDATION
+
+        if(empty($email)) {
+            $errors['email'] = 'Email field is required';
+        }elseif(!User::where('email', $email)->first()) {
+            $errors['email'] = 'Email address doesnt exist';
+
+        }
+        if(empty($password)) {
+            $errors['password'] = 'Password field is required';
+        } elseif($obj = User::where('email', $email)->first()) {
+            if(!password_verify($password, $obj->password)) {
+                $errors['password'] = 'Password do not match';
+
+            }
+        }
+
+
+
+
+        if(count($errors) > 0) return response()->json(['errors' => $errors]);
+
+        $user = User::where('email', $email)->first();
+//       return response()->json(['data', $user]);
+
+
+
+
+//        CREATE ACCESS TOKEN
+        $tokens = $user->tokens;
+        if(count($tokens) > 0) {
+            foreach($tokens as $token) $token->delete();
+            $token = $user->createToken('Access token')->accessToken;
+        } else {
+            $token = $user->createToken('Access token')->accessToken;
+
+        }
+        $user->token = $token;
+        return new UserResource($user);
+
+//        END CREATING TOKEN;
+//        return response()->json(['data' => ['user' => $user, 'token' => $token]]);
+
+    }
+
+
+
 
 
 

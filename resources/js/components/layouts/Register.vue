@@ -115,7 +115,7 @@
                    agreement: '',
                },
                 errors: {},
-                user: null,
+
 
             };
         },
@@ -153,7 +153,6 @@
 
                             this.$store.dispatch('setUser', data.user);
                             localStorage.setItem('token', data.token);
-                           this.user = this.$store.getters.getUser;
 
 
 

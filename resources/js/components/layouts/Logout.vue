@@ -9,6 +9,7 @@
     export default {
         beforeCreate() {
           sessionStorage.removeItem('redirectURL');
+          localStorage.removeItem('token');
           this.$router.push({name: 'home'});
         },
     }

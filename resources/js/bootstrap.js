@@ -28,6 +28,7 @@ window.Vuex = Vuex;
 
 
 window.APIURL = "http://e-commerce.com";
+window.ADMINURL = "http://admin-e-commerce.com";
 
 
 Vue.component('pagination', require('laravel-vue-pagination'));

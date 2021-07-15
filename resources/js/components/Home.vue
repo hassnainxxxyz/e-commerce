@@ -51,7 +51,9 @@
         },
 
         beforeCreate() {
-          if(sessionStorage.getItem('redirectURL')) sessionStorage.removeItem('redirectURL');
+
+
+            if(sessionStorage.getItem('redirectURL')) sessionStorage.removeItem('redirectURL');
         },
         mounted() {
 
