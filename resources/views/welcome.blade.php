@@ -21,8 +21,9 @@
 <div id="root">
     <router-view :key="$router.path"></router-view>
 
+
 </div>
-<p id="the_p"></p>
+
 <script>
 
 </script>
@@ -32,7 +33,6 @@
 <script src="/js/bootstrap.js"></script>
 <script src="/js/app.js"></script>
 <script>
-
 
 
 

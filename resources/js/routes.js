@@ -1,3 +1,30 @@
+// ADMIN ROUTES
+
+
+
+
+
+
+
+
+
+// END ADMIN ROUTES
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import Home from "./components/Home";
 import Test from "./components/Test";
 import FourOFour from "./components/layouts/404";
@@ -48,6 +75,7 @@ const routes = [
     {path: '/checkout', component: Checkout, name: 'checkout'},
     {path: '/featured-products', component: FeaturedProductsAll, name: 'featured.products.all'},
     {path: '/products/:slug', component: ShowProduct, name: 'show.product', props: true},
+
     {path: '*', component: FourOFour, name: '404'},
 ];
 

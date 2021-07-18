@@ -10,6 +10,7 @@
         beforeCreate() {
           sessionStorage.removeItem('redirectURL');
           localStorage.removeItem('token');
+          localStorage.removeItem('user');
           this.$router.push({name: 'home'});
         },
     }

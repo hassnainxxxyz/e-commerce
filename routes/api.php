@@ -21,7 +21,7 @@ $dictionaries =
        FRAT a social club for male undergraduate
        Associating  exaggerate   exaggerate exaggerate  abundance  competencies 
        obfuscate indifferent  vulnerabilities   unabashedly exude simulate provocative
-       implies intrigue  
+       implies intrigue escalate coitus   
        ";
 
 

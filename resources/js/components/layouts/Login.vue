@@ -83,6 +83,9 @@
     import Header from "./Header";
     import Footer from "./Footer";
     export default {
+        beforeCreate() {
+
+        },
         data() {
             return {
                 form: {
@@ -128,7 +131,9 @@
                                    localStorage.setItem('token', data.token);
                                    localStorage.setItem('user', JSON.stringify(data.user));
 
-                                location = ADMINURL+"?token="+data.token;
+
+
+                                location.href = '/administrator/dashboard';
 
 
                             } else if(sessionStorage.getItem('redirectURL')) {

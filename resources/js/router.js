@@ -9,14 +9,20 @@ const vueRouter =  new VueRouter({
 
 // vueRouter.beforeEach((to, from, next) => {
 //       if(to.path !== '/cart' && from.path !== '/register') {
+//window.history.pushState({}, document.title, "/" + "");
+
 //           sessionStorage.removeItem('redirectURL');
 //       }
 
       // next();
 // });
 
+
+
+
 vueRouter.beforeResolve((to, from, next) => {
-     if(to.path) NProgress.start();
+
+    if(to.path) NProgress.start();
      next();
 });
 vueRouter.afterEach((to, from, next) => {
@@ -34,7 +40,7 @@ vueRouter.afterEach((to, from, next) => {
 
 
 
-   NProgress.done();
+    NProgress.done();
 });
 
 
